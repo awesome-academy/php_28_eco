@@ -4,6 +4,9 @@
 /public/assets/admin/vendor
 /public/assets/admin/scss
 /public/assets/admin/js/demo
+/public/assets/user/fonts
+/public/assets/user/images
+/public/assets/user/vendor
 /public/upload
 /storage/*.key
 /vendor

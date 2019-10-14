@@ -37,5 +37,11 @@ Route::group(['prefix' => 'admin'], function() {
 		Route::get('del-image/{idHinh}', 'ProductController@delImageDetail')->name('product-del-img');
 		Route::delete('delete/{id}', 'ProductController@delete')->name('product-delete');
 	});
-	
+
+});
+
+Route::group(['prefix' => 'user'], function() {
+	Route::get('/', function() {
+		return view('user.pages.home');
+	});
 });
