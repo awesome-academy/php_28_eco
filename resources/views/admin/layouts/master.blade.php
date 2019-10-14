@@ -11,6 +11,7 @@
         <link href="assets/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
         <link href="assets/admin/css/nunito.css" rel="stylesheet">
         <link href="assets/admin/css/sb-admin-2.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assets/admin/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     </head>
     <body id="page-top">
@@ -39,5 +40,6 @@
         <script src="assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="assets/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
         <script src="assets/admin/js/sb-admin-2.min.js"></script>
+        <script src="assets/admin/js/my-script.js"></script>
     </body>
 </html>

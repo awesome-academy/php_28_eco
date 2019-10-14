@@ -4,6 +4,7 @@
 /public/assets/admin/vendor
 /public/assets/admin/scss
 /public/assets/admin/js/demo
+/public/upload
 /storage/*.key
 /vendor
 .env

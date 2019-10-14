@@ -18,9 +18,24 @@ Route::get('/', function () {
 Route::get('lang/{lang}', 'LanguageController@changeLang')->name('language');
 
 Route::group(['prefix' => 'admin'], function() {
-	Route::get('category', 'CategoryController@index')->name('category-list');
-	Route::get('category/create', 'CategoryController@create')->name('category-create');
-	Route::post('category/create', 'CategoryController@store')->name('category-store');
-	Route::get('category/edit/{id}', 'CategoryController@edit')->name('category-edit');
-	Route::post('category/edit/{id}', 'CategoryController@update')->name('category-update');
+	Route::group(['prefix' => 'category'], function() {
+		Route::get('/', 'CategoryController@index')->name('category-list');
+		Route::get('create', 'CategoryController@create')->name('category-create');
+		Route::post('create', 'CategoryController@store')->name('category-store');
+		Route::get('edit/{id}', 'CategoryController@edit')->name('category-edit');
+		Route::post('edit/{id}', 'CategoryController@update')->name('category-update');
+		Route::delete('delete/{id}', 'CategoryController@delete')->name('category-delete');
+	});
+
+	Route::group(['prefix' => 'product'], function() {
+		Route::get('/', 'ProductController@index')->name('product-list');
+		Route::get('create', 'ProductController@create')->name('product-create');
+		Route::get('create/{idCateParent}', 'ProductController@getSubCategory');
+		Route::post('create', 'ProductController@store')->name('product-store');
+		Route::get('edit/{id}', 'ProductController@edit')->name('product-edit');
+		Route::post('edit/{id}', 'ProductController@update')->name('product-update');
+		Route::get('del-image/{idHinh}', 'ProductController@delImageDetail')->name('product-del-img');
+		Route::delete('delete/{id}', 'ProductController@delete')->name('product-delete');
+	});
+	
 });
