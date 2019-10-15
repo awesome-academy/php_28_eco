@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\RegisterRequest;
 
 class RegisterController extends Controller
 {
@@ -38,6 +39,30 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function getRegister()
+    {
+        return view('auth.register');
+    }
+
+    public function postRegister(RegisterRequest $request)
+    {
+        //dd($request->all());
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->pass),
+            'tel' => $request->telephone,
+            'address' => $request->address,
+            'gender' => $request->gender,
+            'role_id' => $request->role_id,
+        ]);
+        if ($user->id) {
+            return redirect()->route('get-login')->with(['type_message' => 'success', 'flash_message' => 'Created successed !']);
+        }
+
+        return redirect()->back();
     }
 
     /**

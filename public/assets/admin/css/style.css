@@ -1,0 +1,15 @@
+.danger {
+	color: red;
+}
+.align {
+	text-align: center;
+}
+.img_margin {
+	margin-right: 20px;
+	margin-bottom: 20px;
+	float: left;
+}
+.icon-del {
+	margin-top: -200px;
+	margin-left: -20px;
+}
