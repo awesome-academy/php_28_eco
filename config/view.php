@@ -33,4 +33,8 @@ return [
         realpath(storage_path('framework/views'))
     ),
 
+    'paginate' => '5',
+    'cate_parent' => '0',
+    'count_parent' => '0',
+
 ];
